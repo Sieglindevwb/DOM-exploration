@@ -24,3 +24,12 @@ allParagraphs.forEach (function(paragraph){
     console.log('Paragraph Class' + paragraph.className);
     console.log('-----------------------');
 });
+
+const colorParagraph = document.body.querySelectorAll('p')
+
+document.querySelectorAll('p').forEach(function (paragraph){
+    if(paragraph.classList.length === 0){
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        paragraph.style.color = randomColor;
+    } 
+});
