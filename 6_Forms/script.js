@@ -1,3 +1,31 @@
+const spanInput = document.body.querySelector('span');
+const displayFirstnameInput = document.getElementById("display-firstname")
+
+
+displayFirstnameInput.addEventListener("keyup", function(event) {
+    let inputValue = event.target.value;
+    console.log(inputValue);
+    spanInput.textContent = inputValue;
+    // displayFirstnameInput.textContent = inputValue;
+
+    console.log("Input Value" + inputValue);
+});
+
+const numberInput = document.getElementById("age");
+const hardTruth = document.getElementById("a-hard-truth");
+
+numberInput.addEventListener("keyup", function(event) {
+    let inputNumber = parseInt(event.target.value);
+    if (inputNumber < 18) {
+        hardTruth.style.visibility = "hidden";
+    } else {
+        hardTruth.style.visibility = "visible";
+    }
+});
+
+
+
+
 // TODO: Add a keyup listener on the first input field, so that once you type a letter in this field, it goes into the <span id="display-firstname">. The content of the field and the span should always remain the same.
 // TODO: Add a keyup listener on the second input (the number input), so that if the age is below 18 the content of the section a-hard-truth remains hidden, otherwise show them this hard to swallow fact.
 // TODO: Add a keyup listener on both fields and show a visual hint (for instance turn the field red) if the password is too short (less than 6 characters) or if the password and its confirmation do not match.
