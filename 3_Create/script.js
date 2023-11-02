@@ -44,3 +44,7 @@ learners.forEach(function (learner) {
     currentArticle.append(newSection);
 });
 
+// TODO: make a section element for each student 
+// TODO: Add random background for each section
+// TODO: Create a paragraph with name of learner as content 
+// TODO: Append section to article element 
