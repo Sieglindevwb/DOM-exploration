@@ -13,6 +13,6 @@ const h2 = document.querySelectorAll('h2');
 const titleThird = section[1].querySelector('h2');
 const titleSecond = section[2].querySelector('h2');
 
-section[2].insertBefore(titleThird, section[2].firstElementChild);
+section[2].insertBefore(titleThird, section[2].children[0]);
 section[1].insertBefore(titleSecond, section[1].firstElementChild);
-console.log(section);
+console.log(section[2].innerText);
