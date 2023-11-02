@@ -15,4 +15,8 @@ const titleSecond = section[2].querySelector('h2');
 
 section[2].insertBefore(titleThird, section[2].children[0]);
 section[1].insertBefore(titleSecond, section[1].firstElementChild);
-console.log(section[2].innerText);
+// console.log(section[2].innerText);
+
+//delete last section
+
+document.body.children[1].children[2].remove();
