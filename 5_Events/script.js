@@ -8,9 +8,9 @@ const actionSquares = document.querySelectorAll('.actionsquare')
 const logList = document.querySelector('ul');
 const displayedsquareWrapper = document.querySelector('.displayedsquare-wrapper');
 
-const clickOnSquare = (e) => {
-  const color = e.target.classList[1];
-  console.log(e.target.classList[1])
+const clickOnSquare = (event) => {
+  const color = event.target.classList[1];
+  console.log(event.target.classList[1])
   console.log(getElapsedTime())
 
 
@@ -28,11 +28,13 @@ const clickOnSquare = (e) => {
     displayedsquareWrapper.appendChild(newDiv);
      
      // Alert with the color when a square is clicked
-     newDiv.addEventListener('click', function() {
-       alert(`You clicked on a ${color} square!`);
-      });
+    newDiv.addEventListener('click', (function() {
+      const clickedColor = newDiv.classList[1];
+    alert(`You clicked on a ${clickedColor} square!`);
+    }));
     };
 
+// for loop - already in js
 for (let actionSquare of actionSquares) {
   actionSquare.addEventListener('click', clickOnSquare) 
 }
