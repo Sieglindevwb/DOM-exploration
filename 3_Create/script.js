@@ -32,7 +32,12 @@ function getTextColor(hexColor) {
     const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
     // Choose text color based on luminance
-    return luminance > 0.5 ? '#000000' : '#FFFFFF';
+   // return luminance > 0.5 ? '#000000' : '#FFFFFF';
+   if (luminance > 0.5) {
+    return '#000000'; // Return black if luminance is greater than 0.5
+} else {
+    return '#FFFFFF'; // Return white if luminance is not greater than 0.5
+}
 }
 
 learners.forEach(function (learner) {
