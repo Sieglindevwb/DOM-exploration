@@ -1,7 +1,7 @@
 const spanInput = document.body.querySelector('span');
 const displayFirstnameInput = document.getElementById("display-firstname")
 
-
+// Add a keyup listener on the first input field
 displayFirstnameInput.addEventListener("keyup", function(event) {
     let inputValue = event.target.value;
     console.log(inputValue);
@@ -14,6 +14,7 @@ displayFirstnameInput.addEventListener("keyup", function(event) {
 const numberInput = document.getElementById("age");
 const hardTruth = document.getElementById("a-hard-truth");
 
+//Add a keyup listener on the second input
 numberInput.addEventListener("keyup", function(event) {
     let inputNumber = parseInt(event.target.value);
     if (inputNumber < 18) {
@@ -23,7 +24,25 @@ numberInput.addEventListener("keyup", function(event) {
     }
 });
 
+const passwordTrue = document.getElementById("pwd");
+const passwordConfirmTrue = document.getElementById("pwd-confirm");
 
+// Add a keyup listener on both fields and show a visual hint
+passwordTrue.addEventListener("keyup", validatePassword);
+passwordConfirmTrue.addEventListener("keyup", validatePassword) 
+
+function validatePassword() {
+    const password = passwordTrue.value;
+    const confirmPassword = passwordConfirmTrue;
+
+    if (password.lenght < 6 || password !== confirmPassword) {
+        passwordTrue.style.borderColor = "red";
+        passwordConfirmTrue.style.borderColor = "red";
+    } else {
+        passwordTrue.style.borderColor = "";
+        passwordConfirmTrue.style.borderColor = "";
+    }
+};
 
 
 // TODO: Add a keyup listener on the first input field, so that once you type a letter in this field, it goes into the <span id="display-firstname">. The content of the field and the span should always remain the same.
