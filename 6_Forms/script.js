@@ -44,6 +44,19 @@ function validatePassword() {
     }
 };
 
+const toggleDarkmode = document.getElementById('toggle-darkmode');
+const body = document.body;
+
+toggleDarkmode.addEventListener("change",(event) => {
+    if (toggleDarkmode.value === "dark") {
+        body.style.backgroundColor = "black"
+        body.style.color = "white"
+    } else {
+        body.style.backgroundColor = ""
+        body.style.color = ""
+    }
+});
+
 
 // TODO: Add a keyup listener on the first input field, so that once you type a letter in this field, it goes into the <span id="display-firstname">. The content of the field and the span should always remain the same.
 // TODO: Add a keyup listener on the second input (the number input), so that if the age is below 18 the content of the section a-hard-truth remains hidden, otherwise show them this hard to swallow fact.
