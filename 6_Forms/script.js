@@ -1,14 +1,14 @@
 const spanInput = document.body.querySelector('span');
-const displayFirstnameInput = document.getElementById("display-firstname")
+const firstnameInput = document.getElementById("firstname")
 
 // Add a keyup listener on the first input field
-displayFirstnameInput.addEventListener("keyup", function(event) {
+firstnameInput.addEventListener("keyup", function(event) {
     let inputValue = event.target.value;
     console.log(inputValue);
     spanInput.textContent = inputValue;
     // displayFirstnameInput.textContent = inputValue;
 
-    console.log("Input Value" + inputValue);
+    console.log("Input Value: " + inputValue);
 });
 
 const numberInput = document.getElementById("age");
