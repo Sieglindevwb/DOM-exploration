@@ -29,11 +29,11 @@ const passwordConfirmTrue = document.getElementById("pwd-confirm");
 
 // Add a keyup listener on both fields and show a visual hint
 passwordTrue.addEventListener("keyup", validatePassword);
-passwordConfirmTrue.addEventListener("keyup", validatePassword) 
+passwordConfirmTrue.addEventListener("keyup", validatePassword); 
 
 function validatePassword() {
     const password = passwordTrue.value;
-    const confirmPassword = passwordConfirmTrue;
+    const confirmPassword = passwordConfirmTrue.value;
 
     if (password.lenght < 6 || password !== confirmPassword) {
         passwordTrue.style.borderColor = "red";
