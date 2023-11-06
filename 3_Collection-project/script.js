@@ -6,14 +6,14 @@ const seriesCollection = [ {
     director: ['David Benioff',' D.B. Weiss'],
     releaseDate: 'April 17, 2011',
     picture: '../img/Game_of_Thrones_title_card.jpg',
-    genre: 'Fantasy',
+    genre: ['Fantasy'],
     cast: ['Emilia Clarke','Sophie Turner','Maisie Williams','Kit Harington','Lena Headey','Natalie Dormer','Pedro Pascal','Peter Dinklage'],
     trailer:'https://www.youtube.com/watch?v=KPLWWIOCOOQ'
 },
     //second
 {
     name:'Sex Education',
-    director: 'Laurie Nunn',
+    director: ['Laurie Nunn'],
     releaseDate: 'Januari 11 2019',
     picture:'../img/sex_education_.jpg', 
     genre: ['comedy','drame'],
@@ -23,7 +23,7 @@ const seriesCollection = [ {
     //third
 {
     name:'New Girl',
-    director:'Elizabeth Meriwether',
+    director:['Elizabeth Meriwether'],
     releaseDate:'September 20, 2011',
     picture:'../img/new_girl.jpg',
     genre:['sitcom','comedy'],
@@ -33,7 +33,7 @@ const seriesCollection = [ {
     //fourth
 {
     name:'Outlander',
-    director:'Diana Gabaldon',
+    director:['Diana Gabaldon'],
     releaseDate:'August 9, 2014',
     picture:'../img/Outlander.jpg',
     genre:['drama','romantic'],
@@ -43,7 +43,7 @@ const seriesCollection = [ {
     //fifth
 {
     name:'Something in the Rain',
-    director:'Ahn Pan-seok',
+    director:['Ahn Pan-seok'],
     releaseDate:'March 30, 2018',
     picture:'../img/Sonething_In_The_Rain.jpg',
     genre:['Romance', 'Drama'],
@@ -63,7 +63,7 @@ const seriesCollection = [ {
     //seventh
 {
     name:'Breaking Bad',
-    director:'Vince Gilligan',
+    director:['Vince Gilligan'],
     releaseDate:'January 20, 2008',
     picture:'../img/breaking_bad.jpg',
     genre:['Crime', 'Drama', 'Thriller'],
@@ -83,7 +83,7 @@ const seriesCollection = [ {
     //nine
 {
     name:'The Way of the Househusband',
-    director:'Kousuke Oono',
+    director:['Kousuke Oono'],
     releaseDate:'April 8, 2021',
     picture:'../img/Househusband_.jpg',
     genre:['Comedy', 'Slice of Life'],
@@ -93,7 +93,7 @@ const seriesCollection = [ {
     //ten
 {
     name:'The White Lotus',
-    director:'Mike White',
+    director:['Mike White'],
     releaseDate:'July 11, 2021',
     picture:'../img/the_white_lotus.jpg',
     genre:['Comedy', 'Drama'],
@@ -118,20 +118,20 @@ seriesCollection.forEach(series => {
     title.textContent = series.name;
 
     const director = document.createElement('p');
-    director.innerHTML = '<strong>Director(s):</strong> ${series.director.join()}';
+    director.innerHTML = `<strong>Director(s):</strong> ${Array.isArray(series.director) ? series.director.join(', ') : series.director}`;
 
     const releaseDate = document.createElement('p');
-    releaseDate.innerHTML = '<strong>Release Date:</strong> ${series.releaseDate}';
+    releaseDate.innerHTML = `<strong>Release Date:</strong> ${Array.isArray(series.releaseDate) ? series.releaseDate.join(', ') : series.releaseDate}`;
 
     const genre = document.createElement('p');
     if (Array.isArray(series.genre)) {
-        genre.innerHTML = '<strong>Genre(s):</strong> ${series.genre.join()}';
+        genre.innerHTML = `<strong>Genre(s):</strong> ${series.genre.join(', ')}`;
     } else {
-        genre.innerHTML = '<strong>Genre:</strong> ${series.genre}';
+        genre.innerHTML = `<strong>Genre:</strong> ${series.genre}`;
     }
 
     const cast = document.createElement('p');
-    cast.innerHTML = '<strong>Cast:</strong> ${series.cast.join()}';
+    cast.innerHTML = `<strong>Cast:</strong> ${series.cast.join(', ')}`;
 
     const trailer = document.createElement('a');
     trailer.href = series.trailer;
