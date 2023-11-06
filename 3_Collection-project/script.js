@@ -6,7 +6,7 @@ const collection = [ {
     name: 'Game Of Thrones',
     director: ['David Benioff',' D.B. Weiss'],
     releaseDate: 'April 17, 2011',
-    picture: '',
+    picture: './img/Game_of_Thrones_title_card.jpg',
     genre: 'Fantasy',
     cast: ['Emilia Clarke','Sophie Turner','Maisie Williams','Kit Harington','Lena Headey','Natalie Dormer','Pedro Pascal','Peter Dinklage']
 },
