@@ -1,6 +1,4 @@
-const cardContainer = document.querySelector('.card-conatiner');
-
-const Series = ["GOT", "Sex Education", "New Girl", "Outlander", "Something in the rain", "You", "Breaking Bad", "Trailor Park Boys", "The Way of the Househusband", "The White Lotus"]
+const cardContainer = document.querySelector('.card-container');
 
 const seriesCollection = [ {
     //first
@@ -104,41 +102,51 @@ const seriesCollection = [ {
 }
 ]
 
-// seriesCollection.forEach(series => {
-//     const card = document.createElement('div');
-//     card.className ='card';
+seriesCollection.forEach(series => {
+    const card = document.createElement('div');
+    card.className ='card';
 
-//     const img = document.createElement('img');
-//     img.src = series.picture;
-//     img.alt = series.name;
-//     img.className = 'card-image';
+    const img = document.createElement('img');
+    img.src = series.picture;
+    img.alt = series.name;
+    img.className = 'card-image';
 
-//     const cardInfo = document.createElement('div');
-//     cardInfo.className = 'card-info';
+    const cardInfo = document.createElement('div');
+    cardInfo.className = 'card-info';
 
-//     const title = document.createElement('h2');
-//     title.textContent = series.name;
+    const title = document.createElement('h2');
+    title.textContent = series.name;
 
-//     const director = document.createElement('p');
-//     director.innerHTML = `<strong>Director(s):</strong> ${series.director.join(', ')}`;
+    const director = document.createElement('p');
+    director.innerHTML = '<strong>Director(s):</strong> ${series.director.join()}';
 
-//     const releaseDate = document.createElement('p');
-//     releaseDate.innerHTML = `<strong>Release Date:</strong> ${series.releaseDate}`;
+    const releaseDate = document.createElement('p');
+    releaseDate.innerHTML = '<strong>Release Date:</strong> ${series.releaseDate}';
 
-//     const genre = document.createElement('p');
-//     genre.innerHTML = `<strong>Genre(s):</strong> ${series.genre.join(', ')}`;
+    const genre = document.createElement('p');
+    if (Array.isArray(series.genre)) {
+        genre.innerHTML = '<strong>Genre(s):</strong> ${series.genre.join()}';
+    } else {
+        genre.innerHTML = '<strong>Genre:</strong> ${series.genre}';
+    }
 
-//     const cast = document.createElement('p');
-//     cast.innerHTML = `<strong>Cast:</strong> ${series.cast.join(', ')}`;
+    const cast = document.createElement('p');
+    cast.innerHTML = '<strong>Cast:</strong> ${series.cast.join()}';
 
-//     cardInfo.appendChild(title);
-//     cardInfo.appendChild(director);
-//     cardInfo.appendChild(releaseDate);
-//     cardInfo.appendChild(genre);
-//     cardInfo.appendChild(cast);
+    const trailer = document.createElement('a');
+    trailer.href = series.trailer;
+    trailer.textContent = 'Watch Trailer';
+    trailer.className = 'btn';
 
-//     card.appendChild(img);
-//     card.appendChild(cardInfo);
+    cardInfo.appendChild(title);
+    cardInfo.appendChild(director);
+    cardInfo.appendChild(releaseDate);
+    cardInfo.appendChild(genre);
+    cardInfo.appendChild(cast);
 
-//     cardContainer.appendChild(card);
-// });
+    card.appendChild(img);
+    card.appendChild(cardInfo);
+    card.appendChild(trailer)
+
+    cardContainer.append(card);
+ });
