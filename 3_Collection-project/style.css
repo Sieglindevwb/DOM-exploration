@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(232, 232, 232);
+    font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    padding: 1rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga" on;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    overflow: hidden;
+    max-width: 30%;
+    max-height: 50rem;
+    margin-left: 3rem;
+    margin-bottom: 4rem;
+    align-items: center; /* Center child elements vertically within the card */
+    justify-content: space-between; /* Distribute space evenly between child elements */
+}
+
+.card-image {
+    max-height: 40%;
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 1rem;
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    background: grey;
+    text-decoration: none;
+    padding: 20px 5px;
+    width: 100%; /* Ensure the button takes up full width within the card */
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+  }
+
+.btn:hover {
+    background-color: blue;
+  }
