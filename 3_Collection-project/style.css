@@ -89,10 +89,6 @@ h1 {
     transform: scale(1.1);
     box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
   }
-  body:hover {
-    background-color: rgba(0, 0, 0, 0.377); /* Use rgba to specify a c
-    olor with opacity (in this case, 50% opacity black) */
-}
 
 .btn:hover {
     background-color: blue;
