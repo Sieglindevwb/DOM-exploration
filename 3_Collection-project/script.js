@@ -1,16 +1,4 @@
 const cardContainer = document.querySelector('.card-container');
-const overlay = document.querySelector('.overlay');
-
-cardContainer.addEventListener('mouseover', (event) => {
-    if (event.target.classList.contains('card')) {
-        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'; // Dark semi-transparent background on hover
-    }
-});
-
-cardContainer.addEventListener('mouseout', () => {
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0)'; // Transparent background when not hovering
-});
-
 
 const seriesCollection = [ {
     //first
