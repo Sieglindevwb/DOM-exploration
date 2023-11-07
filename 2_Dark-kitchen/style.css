@@ -1,0 +1,77 @@
+body {
+     /* The image used */
+    background-color: rgba(245, 245, 245, 0.955);
+    color: rgb(27, 27, 74);
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    font-family: "Agbalumo", sans-serif;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.card {
+    background-color: rgba(252, 252, 252, 0.686);
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 25vw;
+    margin-bottom: 4rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    align-items: center; /* Center child elements vertically within the card */
+    justify-content: space-between; /* Distribute space evenly between child elements */
+}
+
+.card-image {
+    height: auto;
+    max-width: 50%;
+    width: 100%;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: 1rem;
+    text-align: left;
+    font-size: 16px;
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.ingrediënts {
+    color:rgba(27, 27, 74, 0.6);
+    margin: 0;
+}
+
+.price {
+    font-family: "Agbalumo", sans-serif;
+    font-size: 20px;
+}
+
+/* CSS for mobile mode (screens 768px and below) */
+@media (max-width: 1090px) {
+    .card-container{
+        margin: auto;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .card {
+        width: 100%; /* Cards take full width in mobile mode */
+        margin: 0.2rem;
+    }
+}
